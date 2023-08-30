@@ -1,7 +1,7 @@
 # HELCOME TO THE REPOSITORY FOR CLARA
 
-Hello and welcome to the Clara e2e tests repository!
-This repository was created for educational purposes only.
+Hello! and welcome to the Clara e2e tests repository!
+This repository was created for educational purposes only with Cypress framework.
 This Repository was made by Emanuel Zini Casaro.
 
 # Scenario and Test Cases
