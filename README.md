@@ -4,6 +4,10 @@ Hello! and welcome to the Clara e2e tests repository!
 This repository was created for educational purposes only with Cypress framework.
 This Repository was made by Emanuel Zini Casaro.
 
+# Media recordings
+
+You can find media recordings at "media" folder.
+
 # Scenario and Test Cases
 
 SCENARIO: As Enduser, validate countries landing page.
