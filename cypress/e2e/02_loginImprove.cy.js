@@ -4,17 +4,18 @@ import { selectors, countries } from '../support/basics/loginPage';
 import { getBySelData } from '../support/commands';
 import { assertions } from '../support/basics/constants';
 
-describe('Home Page Elements Verification', () => {
+describe('As Enduser, should verify login page of each country', () => {
   const { countrySelector, loginButton } = selectors;
   const { mexico, brazil, colombia } = countries;
-  const { includeText, beVisible } = assertions;
+  const { includeText, beVisible, include } = assertions;
   const optionSelector = '.css-1oss4zw-option';
 
   beforeEach(() => {
     cy.visit('/');
   });
 
-  it('TC_01. Should verify language is set in Mexico. Verify default URL landing is México', () => {
+  it('TC_01. Should verify country is set in Mexico. Verify title & submit button exist.', () => {
+    cy.url().should(include, mexico.url);
     getBySelData(countrySelector)
       .should(includeText, mexico.name)
       .should(beVisible)
@@ -27,7 +28,8 @@ describe('Home Page Elements Verification', () => {
       .and(beVisible);
   });
 
-  it('TC_02. Should navigate to Brazil & Colombia. Verify titles and submit buttons on each page', () => {
+  it('TC_02. Should navigate to Brazil & Colombia. Verify titles & submit buttons exist', () => {
+    // Navigate to Brazil
     getBySelData(countrySelector).click();
     cy.get(optionSelector)
       .should(includeText, brazil.name)
@@ -39,12 +41,14 @@ describe('Home Page Elements Verification', () => {
     cy.origin(
       brazil.url,
       { args: { brazil } },
-      ({ brazil: { loginTitle, loginButton } }) => {
+      ({ brazil: { loginTitle, loginButton, url } }) => {
+        cy.url().should('include', url);
         cy.contains(loginTitle).should('be.visible');
         cy.contains('button', loginButton).should('be.visible');
       }
     );
 
+    // Navigate to Colombia
     cy.visit('/');
     getBySelData(countrySelector).click();
     cy.get(optionSelector)
@@ -57,7 +61,8 @@ describe('Home Page Elements Verification', () => {
     cy.origin(
       colombia.url,
       { args: { colombia } },
-      ({ colombia: { loginTitle, loginButton } }) => {
+      ({ colombia: { loginTitle, loginButton, url } }) => {
+        cy.url().should('include', url);
         cy.contains(loginTitle).should('be.visible');
         cy.contains('button', loginButton).should('be.visible');
       }

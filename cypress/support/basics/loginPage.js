@@ -10,7 +10,7 @@ export const selectors = {
 export const countries = {
   mexico: {
     name: 'México',
-    url: '/',
+    url: 'https://app.clara.cc/auth/login',
     loginTitle: 'Ingresa a tu cuenta',
     loginButton: 'Ingresar',
   },
