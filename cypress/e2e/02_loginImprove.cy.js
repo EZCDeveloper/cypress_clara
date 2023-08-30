@@ -14,7 +14,7 @@ describe('As Enduser, should verify login page of each country', () => {
     cy.visit('/');
   });
 
-  it('TC_01. Should verify country is set in Mexico. Verify title & submit button exist.', () => {
+  it('TC_01. Should verify country is set in Mexico. Verify url landing, title, submit button exist & are visible.', () => {
     cy.url().should(include, mexico.url);
     getBySelData(countrySelector)
       .should(includeText, mexico.name)
@@ -28,7 +28,7 @@ describe('As Enduser, should verify login page of each country', () => {
       .and(beVisible);
   });
 
-  it('TC_02. Should navigate to Brazil & Colombia. Verify titles & submit buttons exist', () => {
+  it('TC_02. Should navigate to Brazil & Colombia. Verify url landing, title, submit button exist & are visible.', () => {
     // Navigate to Brazil
     getBySelData(countrySelector).click();
     cy.get(optionSelector)

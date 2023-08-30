@@ -1,10 +1,13 @@
-# HELCOME TO CYPRESS E2E
+# HELCOME TO THE REPOSITORY FOR CLARA
 
 Hello and welcome to the Clara e2e tests repository!
 This repository was created for educational purposes only.
+This Repository was made by Emanuel Zini Casaro.
 
-# Test Cases
+# Scenario and Test Cases
 
-TC01: Validate change language. Verify title change and buttons.
+SCENARIO: As Enduser, validate countries landing page.
 
-TC02: As EnUser, should iterate over all languages
+TC01: Validate default landing is México. Verify url, title, button exist & are visible.
+
+TC02: Validate landing page for Brazil & Colombia. Verify url, title, button exist & are visible.
