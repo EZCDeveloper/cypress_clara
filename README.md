@@ -6,7 +6,7 @@ This Repository was made by Emanuel Zini Casaro.
 
 # Media recordings
 
-You can find media recordings at "media" folder.
+You can find media recordings at "cypress/media" folder.
 
 # Scenario and Test Cases
 
